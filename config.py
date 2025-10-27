@@ -1,0 +1,4 @@
+SYNTHESIA_API_KEY = "f33891a39f73a260dcbd5cc4db6f4a22"
+
+
+

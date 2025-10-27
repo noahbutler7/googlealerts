@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your AI News</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    .media { display: flex; align-items: flex-start; gap: 2rem; }
+    video, audio { width: 400px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <h1>📰 Your AI News</h1>
+  
+
+  <div class="media">
+    {% if audio_file %}
+      <div>
+        <h3>🎧 Listen</h3>
+        <audio controls>
+          <source src="{{ url_for('static', filename='audio/daily_update.mp3') }}" type="audio/mpeg">
+        </audio>
+      </div>
+    {% endif %}
+
+    {% if video_url %}
+      <div>
+        <h3>🎥 Watch</h3>
+        <video controls>
+          <source src="{{ video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    {% endif %}
+  </div>
+
+  <div>{{ summary|safe }}</div>
+  <br>
+  <a href="{{ url_for('index') }}">⬅️ Go Back</a>
+</body>
+</html>
+
+
+
